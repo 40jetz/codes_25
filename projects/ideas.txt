@@ -1,0 +1,4 @@
+1. Whiteboard
+2. Daw
+3. File explorer
+4. Weather report webapp (API)

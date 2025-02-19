@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blogging Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .post {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .input-field, .textarea-field {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Blogging Platform</h1>
+    <input type="text" id="title" class="input-field" placeholder="Title">
+    <textarea id="content" class="textarea-field" placeholder="Write your post here..."></textarea>
+    <button class="button" onclick="addPost()">Publish</button>
+    <div id="posts"></div>
+    
+    <script>
+        function addPost() {
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            
+            if (title && content) {
+                const postContainer = document.createElement('div');
+                postContainer.className = 'post';
+                postContainer.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+                document.getElementById('posts').prepend(postContainer);
+                
+                document.getElementById('title').value = '';
+                document.getElementById('content').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
